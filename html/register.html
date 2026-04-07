@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - IntegraJobs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="register-body">
+
+    <!-- Navbar simplificada -->
+    <nav class="navbar navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">IntegraJobs</a>
+            <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-arrow-left me-1"></i> Volver al inicio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <section class="register-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-80">
+                <div class="col-lg-8 col-md-10">
+                    <!-- Type Switch Card -->
+                    <div class="type-switch-card text-center mb-4">
+                        <div class="btn-group w-50" role="group">
+                            <input type="radio" class="btn-check" name="registerType" id="candidatoReg" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary rounded-start py-2" for="candidatoReg">
+                                <i class="fas fa-user me-1"></i> Candidato
+                            </label>
+                            
+                            <input type="radio" class="btn-check" name="registerType" id="empresaReg" autocomplete="off">
+                            <label class="btn btn-outline-primary rounded-end py-2" for="empresaReg">
+                                <i class="fas fa-building me-1"></i> Empresa
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Register Form Card -->
+                    <div class="register-card shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-body p-5">
+                            <!-- Header -->
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold">Cambiar tipo de cuenta</h3>
+                                <div class="register-type-title mt-2" id="registerTypeTitle">
+                                    <h4 class="h5 text-primary fw-semibold">Crear cuenta de candidato</h4>
+                                    <p class="text-muted small">Comienza a explorar miles de oportunidades laborales</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Register Form -->
+                            <form id="registerForm">
+                                <!-- Name Fields Row -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold small text-muted">Nombre</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0">
+                                                <i class="fas fa-user text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control border-start-0" 
+                                                   placeholder="Ana" id="firstName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold small text-muted">Apellidos</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0">
+                                                <i class="fas fa-user-friends text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control border-start-0" 
+                                                   placeholder="García López" id="lastName" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email Field -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold small text-muted">Correo electrónico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-envelope text-muted"></i>
+                                        </span>
+                                        <input type="email" class="form-control border-start-0" 
+                                               placeholder="tu@correo.com" id="email" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- Password Field -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold small text-muted">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-lock text-muted"></i>
+                                        </span>
+                                        <input type="password" class="form-control border-start-0" 
+                                               placeholder="Mínimo 8 caracteres" id="password" required>
+                                        <button class="btn btn-outline-secondary border-start-0" type="button" id="togglePassword">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </button>
+                                    </div>
+                                    <div class="form-text small" id="passwordHelp">
+                                        <i class="fas fa-info-circle me-1"></i> La contraseña debe tener al menos 8 caracteres
+                                    </div>
+                                </div>
+                                
+                                <!-- Confirm Password Field (for candidato) -->
+                                <div class="mb-3" id="confirmPasswordField">
+                                    <label class="form-label fw-semibold small text-muted">Confirmar contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-check-circle text-muted"></i>
+                                        </span>
+                                        <input type="password" class="form-control border-start-0" 
+                                               placeholder="Repite tu contraseña" id="confirmPassword">
+                                        <button class="btn btn-outline-secondary border-start-0" type="button" id="toggleConfirmPassword">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Fields (hidden by default) -->
+                                <div id="companyFields" style="display: none;">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold small text-muted">Nombre de la empresa</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0">
+                                                <i class="fas fa-building text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control border-start-0" 
+                                                   placeholder="Nombre de tu empresa" id="companyName">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold small text-muted">NIT / Registro</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0">
+                                                <i class="fas fa-id-card text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control border-start-0" 
+                                                   placeholder="Número de identificación tributaria" id="nit">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold small text-muted">Sitio web</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0">
+                                                <i class="fas fa-globe text-muted"></i>
+                                            </span>
+                                            <input type="url" class="form-control border-start-0" 
+                                                   placeholder="https://tuempresa.com" id="website">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Terms and Conditions -->
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label small text-muted" for="termsCheck">
+                                        Al registrarte aceptas nuestros <a href="#" class="text-primary text-decoration-none" id="termsLink"><strong>Términos de Servicio y Política de Privacidad</strong></a>.
+                                    </label>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary w-100 py-2 mb-3 fw-semibold" id="submitBtn">
+                                    <i class="fas fa-user-plus me-2"></i> Crear mi cuenta
+                                </button>
+                                
+                                <!-- Login Link -->
+                                <div class="text-center">
+                                    <p class="mb-0 text-muted small">
+                                        ¿Ya tienes cuenta? 
+                                        <a href="login.html" class="text-primary fw-semibold text-decoration-none">
+                                            Iniciar sesión
+                                        </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer simplificado -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted small mb-0">© 2026 IntegraJobs. Todos los derechos reservados. Hecho con ❤️ en El Salvador</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toggle password visibility for password field
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
+        
+        // Toggle for confirm password field
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        
+        if (toggleConfirmPassword && confirmPasswordInput) {
+            toggleConfirmPassword.addEventListener('click', function() {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
+        
+        // Handle register type switch (Candidato/Empresa)
+        const candidatoRadio = document.getElementById('candidatoReg');
+        const empresaRadio = document.getElementById('empresaReg');
+        const registerTypeTitle = document.getElementById('registerTypeTitle');
+        const companyFields = document.getElementById('companyFields');
+        const confirmPasswordField = document.getElementById('confirmPasswordField');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        function updateFormForType() {
+            if (empresaRadio.checked) {
+                // Empresa mode
+                registerTypeTitle.innerHTML = `
+                    <h4 class="h5 text-success fw-semibold">Crear cuenta de empresa</h4>
+                    <p class="text-muted small">Publica vacantes y encuentra talento verificadox` + `
+                    </p>
+                `;
+                companyFields.style.display = 'block';
+                confirmPasswordField.style.display = 'none';
+                submitBtn.innerHTML = '<i class="fas fa-building me-2"></i> Registrar empresa';
+                submitBtn.classList.remove('btn-primary');
+                submitBtn.classList.add('btn-success');
+                
+                // Remove required from confirm password
+                if (confirmPasswordInput) confirmPasswordInput.required = false;
+                
+                // Add required to company fields
+                const companyName = document.getElementById('companyName');
+                const nit = document.getElementById('nit');
+                if (companyName) companyName.required = true;
+                if (nit) nit.required = true;
+            } else {
+                // Candidato mode
+                registerTypeTitle.innerHTML = `
+                    <h4 class="h5 text-primary fw-semibold">Crear cuenta de candidato</h4>
+                    <p class="text-muted small">Comienza a explorar miles de oportunidades laborales</p>
+                `;
+                companyFields.style.display = 'none';
+                confirmPasswordField.style.display = 'block';
+                submitBtn.innerHTML = '<i class="fas fa-user-plus me-2"></i> Crear mi cuenta';
+                submitBtn.classList.remove('btn-success');
+                submitBtn.classList.add('btn-primary');
+                
+                // Add required to confirm password
+                if (confirmPasswordInput) confirmPasswordInput.required = true;
+                
+                // Remove required from company fields
+                const companyName = document.getElementById('companyName');
+                const nit = document.getElementById('nit');
+                if (companyName) companyName.required = false;
+                if (nit) nit.required = false;
+            }
+        }
+        
+        if (candidatoRadio && empresaRadio) {
+            candidatoRadio.addEventListener('change', updateFormForType);
+            empresaRadio.addEventListener('change', updateFormForType);
+        }
+        
+        // Validate password strength
+        function validatePassword(password) {
+            if (password.length < 8) {
+                return { valid: false, message: 'La contraseña debe tener al menos 8 caracteres' };
+            }
+            return { valid: true, message: '' };
+        }
+        
+        // Handle register form submission
+        const registerForm = document.getElementById('registerForm');
+        
+        if (registerForm) {
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const firstName = document.getElementById('firstName')?.value || '';
+                const lastName = document.getElementById('lastName')?.value || '';
+                const email = document.getElementById('email')?.value || '';
+                const password = passwordInput?.value || '';
+                const termsCheck = document.getElementById('termsCheck')?.checked || false;
+                const isEmpresa = empresaRadio.checked;
+                
+                // Validate required fields
+                if (!firstName || !lastName || !email || !password) {
+                    showNotification('Por favor completa todos los campos obligatorios', 'warning');
+                    return;
+                }
+                
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showNotification('Por favor ingresa un correo electrónico válido', 'warning');
+                    return;
+                }
+                
+                // Validate password
+                const passwordValidation = validatePassword(password);
+                if (!passwordValidation.valid) {
+                    showNotification(passwordValidation.message, 'warning');
+                    return;
+                }
+                
+                // Validate confirm password for candidato
+                if (!isEmpresa) {
+                    const confirmPassword = confirmPasswordInput?.value || '';
+                    if (password !== confirmPassword) {
+                        showNotification('Las contraseñas no coinciden', 'warning');
+                        return;
+                    }
+                }
+                
+                // Validate company fields for empresa
+                if (isEmpresa) {
+                    const companyName = document.getElementById('companyName')?.value || '';
+                    const nit = document.getElementById('nit')?.value || '';
+                    if (!companyName || !nit) {
+                        showNotification('Por favor completa los datos de la empresa', 'warning');
+                        return;
+                    }
+                }
+                
+                // Validate terms
+                if (!termsCheck) {
+                    showNotification('Debes aceptar los Términos de Servicio y Política de Privacidad', 'warning');
+                    return;
+                }
+                
+                // Simulate successful registration
+                const userType = isEmpresa ? 'Empresa' : 'Candidato';
+                showNotification(`¡Registro exitoso! Bienvenido ${firstName} ${lastName} (${userType})`, 'success');
+                
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            });
+        }
+        
+        // Terms link handler
+        const termsLink = document.getElementById('termsLink');
+        if (termsLink) {
+            termsLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Consulta nuestros términos y condiciones en nuestra página', 'info');
+            });
+        }
+        
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'warning' ? 'warning' : type === 'success' ? 'success' : 'info';
+            const icon = type === 'warning' ? 'exclamation-triangle' : type === 'success' ? 'check-circle' : 'info-circle';
+            
+            notification.className = `alert alert-${bgColor} position-fixed top-0 end-0 m-3 shadow`;
+            notification.style.zIndex = '9999';
+            notification.style.minWidth = '300px';
+            notification.style.animation = 'slideInRight 0.3s ease-out';
+            notification.innerHTML = `
+                <i class="fas fa-${icon} me-2"></i>
+                ${message}
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+        
+        // Add animation style
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(100px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

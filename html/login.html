@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - IntegraJobs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="login-body">
+
+    <!-- Navbar simplificada -->
+    <nav class="navbar navbar-light py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white fs-3" href="index.html">IntegraJobs</a>
+            <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                <i class="fas fa-arrow-left me-1"></i> Volver al inicio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="login-card shadow-lg">
+                        <div class="row g-0">
+                            <!-- Left Side - Info Section (Azul) -->
+                            <div class="col-md-6">
+                                <div class="info-section text-white">
+                                    <h2 class="display-6 fw-bold mb-4">Tu próxima oportunidad te está esperando</h2>
+                                    <p class="mb-4 opacity-75">Miles de empleos. Cientos de empresas. Una plataforma diseñada para impulsar tu carrera en El Salvador.</p>
+                                    
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>+10,000 vacantes activas</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>95% tasa de satisfacción</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>+500 empresas verificadas</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Testimonial -->
+                                    <div class="mt-4 pt-4 border-top border-white border-opacity-25">
+                                        <div class="rating-stars mb-3">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                        <p class="fst-italic mb-3">"Encontré mi trabajo ideal en menos de 2 semanas. IntegraJobs conecta talento con las mejores empresas del país."</p>
+                                        <div>
+                                            <strong>María García</strong>
+                                            <p class="small opacity-75 mb-0">UX Designer · Banco Agrícola</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Side - Login Form -->
+                            <div class="col-md-6">
+                                <div class="form-section">
+                                    <div class="text-center mb-4">
+                                        <h3 class="fw-bold">Iniciar sesión</h3>
+                                        <p class="text-muted">Accede a tu cuenta para continuar</p>
+                                    </div>
+                                    
+                                    <!-- Role Toggle Buttons -->
+                                    <div class="btn-group w-100 mb-4" role="group">
+                                        <input type="radio" class="btn-check" name="userType" id="candidato" autocomplete="off" checked>
+                                        <label class="btn btn-outline-primary rounded-start py-2" for="candidato">
+                                            <i class="fas fa-user me-1"></i> Candidato
+                                        </label>
+                                        
+                                        <input type="radio" class="btn-check" name="userType" id="empresa" autocomplete="off">
+                                        <label class="btn btn-outline-primary rounded-end py-2" for="empresa">
+                                            <i class="fas fa-building me-1"></i> Empresa
+                                        </label>
+                                    </div>
+                                    
+                                    <!-- Login Form -->
+                                    <form id="loginForm">
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted small fw-semibold">Correo electrónico</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-envelope text-muted"></i>
+                                                </span>
+                                                <input type="email" class="form-control" 
+                                                       placeholder="tu@correo.com" id="email" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted small fw-semibold">Contraseña</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-light">
+                                                    <i class="fas fa-lock text-muted"></i>
+                                                </span>
+                                                <input type="password" class="form-control" 
+                                                       placeholder="••••••••" id="password" required>
+                                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                    <i class="fas fa-eye-slash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="remember">
+                                                <label class="form-check-label small" for="remember">Recordarme</label>
+                                            </div>
+                                            <a href="#" class="text-decoration-none small" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary w-100 py-2 mb-3 fw-semibold">
+                                            <i class="fas fa-sign-in-alt me-2"></i> Iniciar sesión
+                                        </button>
+                                        
+                                        <div class="text-center">
+                                            <p class="mb-0">
+                                                ¿No tienes una cuenta? 
+                                                <a href="register.html" class="text-primary fw-semibold text-decoration-none">
+                                                    Regístrate gratis aquí
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </form>
+                                    
+                                    <hr class="my-4">
+                                    
+                                    <div class="text-center">
+                                        <p class="small text-muted mb-0">
+                                            <i class="fas fa-shield-alt me-1"></i> Plataforma líder de empleos en El Salvador · Sin costo para candidatos
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/login.js"></script>
+</body>
+</html>

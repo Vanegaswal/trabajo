@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - IntegraJobs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="candidato-body">
+
+    <!-- Navbar del candidato -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">IntegraJobs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#candidatoNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="candidatoNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-page="dashboard"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="mis-postulaciones"><i class="fas fa-file-alt me-1"></i> Mis postulaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="empleos"><i class="fas fa-briefcase me-1"></i> Explorar empleos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="perfil"><i class="fas fa-user me-1"></i> Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="configuracion"><i class="fas fa-cog me-1"></i> Configuración</a></li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <img src="https://via.placeholder.com/30" class="rounded-circle me-1" alt="Avatar" width="25" height="25">
+                        Ana García
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#" data-page="perfil"><i class="fas fa-user me-2"></i> Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#" data-page="configuracion"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="index.html"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container py-4" id="mainContent">
+        <!-- Dashboard Page -->
+        <div id="dashboardPage">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner bg-gradient-primary rounded-4 p-4 mb-4 text-white">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="fw-bold mb-2">¡Bienvenida, Ana! 👋</h2>
+                        <p class="mb-0 opacity-90">Tu próximo gran oportunidad está más cerca que nunca. Sigue postulando y alcanza tus metas profesionales.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="btn btn-light" data-page="empleos">
+                            <i class="fas fa-search me-1"></i> Explorar empleos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-3 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Postulaciones enviadas</p>
+                                <h3 class="fw-bold mb-0">12</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +3 esta semana</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Entrevistas</p>
+                                <h3 class="fw-bold mb-0">3</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-warning"><i class="fas fa-clock"></i> 2 pendientes</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Ofertas recibidas</p>
+                                <h3 class="fw-bold mb-0">2</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-success"><i class="fas fa-check-circle"></i> 1 nueva</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Perfil completado</p>
+                                <h3 class="fw-bold mb-0">85%</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="progress mt-2" style="height: 5px;">
+                            <div class="progress-bar bg-success" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Applications and Recommendations -->
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="fw-bold mb-0"><i class="fas fa-clock me-2 text-primary"></i> Postulaciones recientes</h5>
+                                <a href="#" class="text-primary text-decoration-none small" data-page="mis-postulaciones">Ver todas</a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Puesto</th>
+                                            <th>Empresa</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recentApplications">
+                                        <tr>
+                                            <td><strong>UX Designer Senior</strong></td>
+                                            <td>Banco Agrícola</td>
+                                            <td>15/03/2026</td>
+                                            <td><span class="badge bg-warning">En revisión</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Frontend Developer</strong></td>
+                                            <td>Tigo El Salvador</td>
+                                            <td>10/03/2026</td>
+                                            <td><span class="badge bg-success">Entrevista</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Product Designer</strong></td>
+                                            <td>Applaudo Studios</td>
+                                            <td>05/03/2026</td>
+                                            <td><span class="badge bg-danger">No seleccionado</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <h5 class="fw-bold mb-0"><i class="fas fa-chart-pie me-2 text-primary"></i> Estadísticas</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <canvas id="applicationsChart" height="200"></canvas>
+                            <div class="mt-3 text-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="mb-0 small text-muted">Tasa de éxito</p>
+                                        <h6 class="fw-bold text-success">25%</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-0 small text-muted">Visitas al perfil</p>
+                                        <h6 class="fw-bold text-primary">45</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommended Jobs -->
+            <div class="mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold"><i class="fas fa-star me-2 text-warning"></i> Empleos recomendados para ti</h5>
+                    <a href="#" class="text-primary text-decoration-none small" data-page="empleos">Ver más</a>
+                </div>
+                <div class="row g-3" id="recommendedJobs">
+                    <!-- Jobs will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Mis Postulaciones Page -->
+        <div id="misPostulacionesPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h4 class="fw-bold mb-0"><i class="fas fa-file-alt me-2 text-primary"></i> Mis postulaciones</h4>
+                    <p class="text-muted mt-2">Historial de todas tus aplicaciones y su estado actual</p>
+                </div>
+                <div class="card-body p-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Puesto</th>
+                                    <th>Empresa</th>
+                                    <th>Ubicación</th>
+                                    <th>Fecha postulación</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allApplications">
+                                <tr>
+                                    <td><strong>UX Designer Senior</strong></td>
+                                    <td>Banco Agrícola</td>
+                                    <td>Santa Tecla</td>
+                                    <td>15/03/2026</td>
+                                    <td><span class="badge bg-warning">En revisión</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(1)">Ver detalles</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Frontend Developer</strong></td>
+                                    <td>Tigo El Salvador</td>
+                                    <td>San Salvador</td>
+                                    <td>10/03/2026</td>
+                                    <td><span class="badge bg-success">Entrevista</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(2)">Ver detalles</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Product Designer</strong></td>
+                                    <td>Applaudo Studios</td>
+                                    <td>Remoto</td>
+                                    <td>05/03/2026</td>
+                                    <td><span class="badge bg-danger">No seleccionado</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(3)">Ver detalles</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backend Engineer</strong></td>
+                                    <td>Applaudo Studios</td>
+                                    <td>Remoto</td>
+                                    <td>01/03/2026</td>
+                                    <td><span class="badge bg-secondary">Archivado</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(4)">Ver detalles</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explorar Empleos Page -->
+        <div id="empleosPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h4 class="fw-bold mb-0"><i class="fas fa-briefcase me-2 text-primary"></i> Explorar empleos</h4>
+                    <p class="text-muted mt-2">Encuentra las mejores oportunidades laborales en El Salvador</p>
+                </div>
+                <div class="card-body p-4">
+                    <!-- Search Filters -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" placeholder="Buscar por puesto o empresa..." id="jobSearch">
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="jobLocation">
+                                <option value="">Todas las ubicaciones</option>
+                                <option>San Salvador</option>
+                                <option>Santa Tecla</option>
+                                <option>Remoto</option>
+                                <option>La Libertad</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="jobCategory">
+                                <option value="">Todas las categorías</option>
+                                <option>Tecnología</option>
+                                <option>Diseño</option>
+                                <option>Marketing</option>
+                                <option>Finanzas</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-primary w-100" onclick="searchJobs()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Jobs List -->
+                    <div id="availableJobs">
+                        <!-- Jobs will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mi Perfil Page -->
+        <div id="perfilPage" style="display: none;">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 rounded-4 text-center">
+                        <div class="card-body p-4">
+                            <img src="https://via.placeholder.com/120" class="rounded-circle mb-3" alt="Profile" width="120" height="120">
+                            <h4 class="fw-bold mb-1">Ana García López</h4>
+                            <p class="text-muted">UX Designer Senior</p>
+                            <p class="small text-muted">ana.garcia@email.com · +503 7000-0000</p>
+                            <hr>
+                            <button class="btn btn-outline-primary w-100" onclick="editProfile()">
+                                <i class="fas fa-edit me-1"></i> Editar perfil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <h5 class="fw-bold mb-0"><i class="fas fa-info-circle me-2 text-primary"></i> Información profesional</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Sobre mí</h6>
+                                <p class="text-muted">Diseñadora UX con 5 años de experiencia en creación de productos digitales centrados en el usuario. Apasionada por la innovación y las metodologías ágiles.</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Habilidades</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-primary">Figma</span>
+                                    <span class="badge bg-primary">Adobe XD</span>
+                                    <span class="badge bg-primary">Sketch</span>
+                                    <span class="badge bg-primary">UX Research</span>
+                                    <span class="badge bg-primary">Prototyping</span>
+                                    <span class="badge bg-primary">User Testing</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Experiencia laboral</h6>
+                                <div class="mb-3">
+                                    <p class="fw-bold mb-0">UX Designer Senior - Banco Agrícola</p>
+                                    <small class="text-muted">2022 - Presente</small>
+                                    <p class="text-muted small mt-1">Diseño de experiencia para app móvil y banca en línea.</p>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-0">UX/UI Designer - Grupo Q</p>
+                                    <small class="text-muted">2019 - 2022</small>
+                                    <p class="text-muted small mt-1">Rediseño de plataforma e-commerce.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Educación</h6>
+                                <p class="mb-0">Licenciatura en Diseño Gráfico - Universidad de El Salvador</p>
+                                <small class="text-muted">2014 - 2019</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuración Page -->
+        <div id="configuracionPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h4 class="fw-bold mb-0"><i class="fas fa-cog me-2 text-primary"></i> Configuración de cuenta</h4>
+                    <p class="text-muted mt-2">Administra tus preferencias y ajustes de cuenta</p>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Preferencias de notificaciones</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                            <label class="form-check-label" for="emailNotifications">Notificaciones por correo electrónico</label>
+                        </div>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="jobAlerts" checked>
+                            <label class="form-check-label" for="jobAlerts">Alertas de nuevos empleos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="smsNotifications">
+                            <label class="form-check-label" for="smsNotifications">Notificaciones por SMS</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Cambiar contraseña</h6>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" placeholder="Contraseña actual">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" placeholder="Nueva contraseña">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" placeholder="Confirmar nueva contraseña">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h6 class="fw-bold text-danger">Zona de peligro</h6>
+                        <button class="btn btn-outline-danger" onclick="deleteAccount()">
+                            <i class="fas fa-trash-alt me-1"></i> Eliminar mi cuenta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted small mb-0">© 2026 IntegraJobs. Todos los derechos reservados. Hecho con ❤️ en El Salvador</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Navigation handling
+        function showPage(pageId) {
+            // Hide all pages
+            document.getElementById('dashboardPage').style.display = 'none';
+            document.getElementById('misPostulacionesPage').style.display = 'none';
+            document.getElementById('empleosPage').style.display = 'none';
+            document.getElementById('perfilPage').style.display = 'none';
+            document.getElementById('configuracionPage').style.display = 'none';
+            
+            // Show selected page
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId.replace('Page', '').toLowerCase()) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Load jobs if exploring jobs page
+            if (pageId === 'empleosPage') {
+                loadAvailableJobs();
+            }
+        }
+        
+        // Load available jobs
+        function loadAvailableJobs() {
+            const jobs = [
+                { title: "Frontend Developer", company: "Tigo El Salvador", location: "San Salvador", salary: "$1,800-$2,500", type: "Tiempo completo", category: "Tecnología" },
+                { title: "UX Designer Senior", company: "Banco Agrícola", location: "Santa Tecla", salary: "$1,500-$2,200", type: "Presencial", category: "Diseño" },
+                { title: "Backend Engineer", company: "Applaudo Studios", location: "Remoto", salary: "$2,500-$3,800", type: "Remoto", category: "Tecnología" },
+                { title: "Product Manager", company: "Grupo Q", location: "San Salvador", salary: "$2,000-$3,000", type: "Híbrido", category: "Marketing" },
+                { title: "Data Analyst", company: "Banco Cuscatlán", location: "San Salvador", salary: "$1,600-$2,400", type: "Tiempo completo", category: "Finanzas" },
+                { title: "DevOps Engineer", company: "Millicom", location: "Remoto", salary: "$2,800-$4,000", type: "Remoto", category: "Tecnología" }
+            ];
+            
+            let html = '<div class="row g-3">';
+            jobs.forEach(job => {
+                html += `
+                    <div class="col-md-6">
+                        <div class="job-card p-3 border rounded-3">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="fw-bold mb-1">${job.title}</h6>
+                                    <p class="text-primary mb-1 small">${job.company}</p>
+                                    <div class="d-flex gap-3 small text-muted mb-2">
+                                        <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                                        <span><i class="fas fa-clock"></i> ${job.type}</span>
+                                    </div>
+                                    <p class="fw-bold mb-0">${job.salary}</p>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="applyToJob('${job.title}', '${job.company}')">
+                                    <i class="fas fa-paper-plane"></i> Postular
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            document.getElementById('availableJobs').innerHTML = html;
+        }
+        
+        // Load recommended jobs
+        function loadRecommendedJobs() {
+            const jobs = [
+                { title: "Frontend Developer", company: "Tigo El Salvador", location: "San Salvador", salary: "$1,800-$2,500" },
+                { title: "UX Designer Senior", company: "Banco Agrícola", location: "Santa Tecla", salary: "$1,500-$2,200" },
+                { title: "Product Designer", company: "Applaudo Studios", location: "Remoto", salary: "$2,000-$3,000" }
+            ];
+            
+            let html = '';
+            jobs.forEach(job => {
+                html += `
+                    <div class="col-md-4">
+                        <div class="job-card p-3 border rounded-3">
+                            <h6 class="fw-bold mb-1">${job.title}</h6>
+                            <p class="text-primary mb-1 small">${job.company}</p>
+                            <div class="d-flex gap-3 small text-muted mb-2">
+                                <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                            </div>
+                            <p class="fw-bold mb-2">${job.salary}</p>
+                            <button class="btn btn-outline-primary btn-sm w-100" onclick="applyToJob('${job.title}', '${job.company}')">
+                                Postular ahora
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('recommendedJobs').innerHTML = html;
+        }
+        
+        // Apply to job function
+        function applyToJob(title, company) {
+            showNotification(`Te has postulado a ${title} en ${company}`, 'success');
+            setTimeout(() => {
+                showPage('misPostulacionesPage');
+            }, 1500);
+        }
+        
+        // Search jobs
+        function searchJobs() {
+            const searchTerm = document.getElementById('jobSearch').value.toLowerCase();
+            const location = document.getElementById('jobLocation').value;
+            const category = document.getElementById('jobCategory').value;
+            
+            showNotification(`Buscando: ${searchTerm || 'todos'} en ${location || 'todas partes'}`, 'info');
+            // Here you would filter jobs based on criteria
+        }
+        
+        // View job details
+        function viewJobDetails(jobId) {
+            showNotification('Cargando detalles del empleo...', 'info');
+        }
+        
+        // Edit profile
+        function editProfile() {
+            showNotification('Funcionalidad de edición de perfil próximamente', 'info');
+        }
+        
+        // Delete account
+        function deleteAccount() {
+            if (confirm('¿Estás segura de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.')) {
+                showNotification('Cuenta eliminada. Redirigiendo...', 'warning');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        }
+        
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const bgColor = type === 'warning' ? 'warning' : type === 'success' ? 'success' : 'info';
+            const icon = type === 'warning' ? 'exclamation-triangle' : type === 'success' ? 'check-circle' : 'info-circle';
+            
+            notification.className = `alert alert-${bgColor} position-fixed top-0 end-0 m-3 shadow`;
+            notification.style.zIndex = '9999';
+            notification.style.minWidth = '300px';
+            notification.style.animation = 'slideInRight 0.3s ease-out';
+            notification.innerHTML = `<i class="fas fa-${icon} me-2"></i>${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+        
+        // Chart initialization
+        function initChart() {
+            const ctx = document.getElementById('applicationsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['En revisión', 'Entrevista', 'No seleccionado', 'Archivado'],
+                    datasets: [{
+                        data: [5, 3, 3, 1],
+                        backgroundColor: ['#ffc107', '#198754', '#dc3545', '#6c757d'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Setup navigation event listeners
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                if (page === 'dashboard') showPage('dashboardPage');
+                else if (page === 'mis-postulaciones') showPage('misPostulacionesPage');
+                else if (page === 'empleos') showPage('empleosPage');
+                else if (page === 'perfil') showPage('perfilPage');
+                else if (page === 'configuracion') showPage('configuracionPage');
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('dashboardPage');
+            initChart();
+            loadRecommendedJobs();
+        });
+        
+        // Make functions global
+        window.applyToJob = applyToJob;
+        window.viewJobDetails = viewJobDetails;
+        window.editProfile = editProfile;
+        window.deleteAccount = deleteAccount;
+        window.searchJobs = searchJobs;
+    </script>
+</body>
+</html>
