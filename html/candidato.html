@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Panel - IntegraJobs</title>
+    <title>Panel Candidato - IntegraJobs</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -11,12 +11,12 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="candidato-body">
 
     <!-- Navbar del candidato -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="index.html">IntegraJobs</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#candidatoNavbar">
@@ -25,18 +25,18 @@
             <div class="collapse navbar-collapse" id="candidatoNavbar">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" data-page="dashboard"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-page="mis-postulaciones"><i class="fas fa-file-alt me-1"></i> Mis postulaciones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-page="empleos"><i class="fas fa-briefcase me-1"></i> Explorar empleos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-page="perfil"><i class="fas fa-user me-1"></i> Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="mis-postulaciones"><i class="fas fa-file-alt me-1"></i> Mis Postulaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="empleos"><i class="fas fa-briefcase me-1"></i> Explorar Empleos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="perfil"><i class="fas fa-user me-1"></i> Mi Perfil</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" data-page="configuracion"><i class="fas fa-cog me-1"></i> Configuración</a></li>
                 </ul>
                 <div class="dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <img src="https://via.placeholder.com/30" class="rounded-circle me-1" alt="Avatar" width="25" height="25">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <img src="../assets/images/ana_garcia.jpg" class="rounded-circle candidate-avatar me-1" alt="Avatar" width="30" height="30">
                         Ana García
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#" data-page="perfil"><i class="fas fa-user me-2"></i> Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#" data-page="perfil"><i class="fas fa-user me-2"></i> Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="#" data-page="configuracion"><i class="fas fa-cog me-2"></i> Configuración</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="index.html"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
@@ -48,13 +48,16 @@
 
     <!-- Contenido principal -->
     <div class="container py-4" id="mainContent">
-        <!-- Dashboard Page -->
+        
+        <!-- ============================================ -->
+        <!-- DASHBOARD PAGE -->
+        <!-- ============================================ -->
         <div id="dashboardPage">
             <!-- Welcome Banner -->
             <div class="welcome-banner bg-gradient-primary rounded-4 p-4 mb-4 text-white">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h2 class="fw-bold mb-2">¡Bienvenida, Ana! 👋</h2>
+                        <h2 class="fw-bold mb-2">¡Bienvenida, Ana García! 👋</h2>
                         <p class="mb-0 opacity-90">Tu próximo gran oportunidad está más cerca que nunca. Sigue postulando y alcanza tus metas profesionales.</p>
                     </div>
                     <div class="col-md-4 text-md-end mt-3 mt-md-0">
@@ -146,12 +149,12 @@
                         <div class="card-body p-4">
                             <div class="table-responsive">
                                 <table class="table table-hover">
-                                    <thead>
+                                    <thead class="table-light">
                                         <tr>
-                                            <th>Puesto</th>
-                                            <th>Empresa</th>
-                                            <th>Fecha</th>
-                                            <th>Estado</th>
+                                            <th>PUESTO</th>
+                                            <th>EMPRESA</th>
+                                            <th>FECHA</th>
+                                            <th>ESTADO</th>
                                         </tr>
                                     </thead>
                                     <tbody id="recentApplications">
@@ -165,13 +168,19 @@
                                             <td><strong>Frontend Developer</strong></td>
                                             <td>Tigo El Salvador</td>
                                             <td>10/03/2026</td>
-                                            <td><span class="badge bg-success">Entrevista</span></td>
+                                            <td><span class="badge bg-info">Entrevista</span></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Product Designer</strong></td>
                                             <td>Applaudo Studios</td>
                                             <td>05/03/2026</td>
                                             <td><span class="badge bg-danger">No seleccionado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Backend Engineer</strong></td>
+                                            <td>Grupo Q</td>
+                                            <td>01/03/2026</td>
+                                            <td><span class="badge bg-secondary">Archivado</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -210,16 +219,59 @@
                     <a href="#" class="text-primary text-decoration-none small" data-page="empleos">Ver más</a>
                 </div>
                 <div class="row g-3" id="recommendedJobs">
-                    <!-- Jobs will be loaded here -->
+                    <div class="col-md-4">
+                        <div class="job-card p-3 border rounded-3 bg-white">
+                            <h6 class="fw-bold mb-1">Desarrollador Frontend React</h6>
+                            <p class="text-primary mb-1 small">Tigo El Salvador</p>
+                            <div class="d-flex gap-3 small text-muted mb-2">
+                                <span><i class="fas fa-map-marker-alt"></i> San Salvador</span>
+                                <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                            </div>
+                            <p class="fw-bold mb-2">$1,800 - $2,500</p>
+                            <button class="btn btn-outline-primary btn-sm w-100" onclick="aplicarEmpleo('Desarrollador Frontend React', 'Tigo El Salvador')">
+                                Postular ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="job-card p-3 border rounded-3 bg-white">
+                            <h6 class="fw-bold mb-1">UX Designer Senior</h6>
+                            <p class="text-primary mb-1 small">Banco Agrícola</p>
+                            <div class="d-flex gap-3 small text-muted mb-2">
+                                <span><i class="fas fa-map-marker-alt"></i> Santa Tecla</span>
+                                <span><i class="fas fa-clock"></i> Presencial</span>
+                            </div>
+                            <p class="fw-bold mb-2">$1,500 - $2,200</p>
+                            <button class="btn btn-outline-primary btn-sm w-100" onclick="aplicarEmpleo('UX Designer Senior', 'Banco Agrícola')">
+                                Postular ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="job-card p-3 border rounded-3 bg-white">
+                            <h6 class="fw-bold mb-1">Backend Engineer Node.js</h6>
+                            <p class="text-primary mb-1 small">Applaudo Studios</p>
+                            <div class="d-flex gap-3 small text-muted mb-2">
+                                <span><i class="fas fa-map-marker-alt"></i> Remoto</span>
+                                <span><i class="fas fa-clock"></i> Remoto</span>
+                            </div>
+                            <p class="fw-bold mb-2">$2,500 - $3,800</p>
+                            <button class="btn btn-outline-primary btn-sm w-100" onclick="aplicarEmpleo('Backend Engineer Node.js', 'Applaudo Studios')">
+                                Postular ahora
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Mis Postulaciones Page -->
+        <!-- ============================================ -->
+        <!-- MIS POSTULACIONES PAGE -->
+        <!-- ============================================ -->
         <div id="misPostulacionesPage" style="display: none;">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-header bg-white border-0 pt-4 px-4">
-                    <h4 class="fw-bold mb-0"><i class="fas fa-file-alt me-2 text-primary"></i> Mis postulaciones</h4>
+                    <h4 class="fw-bold mb-0"><i class="fas fa-file-alt me-2 text-primary"></i> Mis Postulaciones</h4>
                     <p class="text-muted mt-2">Historial de todas tus aplicaciones y su estado actual</p>
                 </div>
                 <div class="card-body p-4">
@@ -227,12 +279,12 @@
                         <table class="table table-hover">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Puesto</th>
-                                    <th>Empresa</th>
-                                    <th>Ubicación</th>
-                                    <th>Fecha postulación</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
+                                    <th>PUESTO</th>
+                                    <th>EMPRESA</th>
+                                    <th>UBICACIÓN</th>
+                                    <th>FECHA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
                                 </tr>
                             </thead>
                             <tbody id="allApplications">
@@ -242,15 +294,15 @@
                                     <td>Santa Tecla</td>
                                     <td>15/03/2026</td>
                                     <td><span class="badge bg-warning">En revisión</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(1)">Ver detalles</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(1)"><i class="fas fa-eye"></i> Ver</button></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Frontend Developer</strong></td>
                                     <td>Tigo El Salvador</td>
                                     <td>San Salvador</td>
                                     <td>10/03/2026</td>
-                                    <td><span class="badge bg-success">Entrevista</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(2)">Ver detalles</button></td>
+                                    <td><span class="badge bg-info">Entrevista</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(2)"><i class="fas fa-eye"></i> Ver</button></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Product Designer</strong></td>
@@ -258,15 +310,23 @@
                                     <td>Remoto</td>
                                     <td>05/03/2026</td>
                                     <td><span class="badge bg-danger">No seleccionado</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(3)">Ver detalles</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(3)"><i class="fas fa-eye"></i> Ver</button></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Backend Engineer</strong></td>
-                                    <td>Applaudo Studios</td>
-                                    <td>Remoto</td>
+                                    <td>Grupo Q</td>
+                                    <td>San Salvador</td>
                                     <td>01/03/2026</td>
                                     <td><span class="badge bg-secondary">Archivado</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary" onclick="viewJobDetails(4)">Ver detalles</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(4)"><i class="fas fa-eye"></i> Ver</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Data Analyst</strong></td>
+                                    <td>Banco Cuscatlán</td>
+                                    <td>San Salvador</td>
+                                    <td>25/02/2026</td>
+                                    <td><span class="badge bg-success">Contratado</span></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(5)"><i class="fas fa-eye"></i> Ver</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -275,11 +335,13 @@
             </div>
         </div>
 
-        <!-- Explorar Empleos Page -->
+        <!-- ============================================ -->
+        <!-- EXPLORAR EMPLEOS PAGE -->
+        <!-- ============================================ -->
         <div id="empleosPage" style="display: none;">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-header bg-white border-0 pt-4 px-4">
-                    <h4 class="fw-bold mb-0"><i class="fas fa-briefcase me-2 text-primary"></i> Explorar empleos</h4>
+                    <h4 class="fw-bold mb-0"><i class="fas fa-briefcase me-2 text-primary"></i> Explorar Empleos</h4>
                     <p class="text-muted mt-2">Encuentra las mejores oportunidades laborales en El Salvador</p>
                 </div>
                 <div class="card-body p-4">
@@ -295,6 +357,7 @@
                                 <option>Santa Tecla</option>
                                 <option>Remoto</option>
                                 <option>La Libertad</option>
+                                <option>Híbrido</option>
                             </select>
                         </div>
                         <div class="col-md-3">
@@ -304,37 +367,171 @@
                                 <option>Diseño</option>
                                 <option>Marketing</option>
                                 <option>Finanzas</option>
+                                <option>Ventas</option>
                             </select>
                         </div>
                         <div class="col-md-1">
-                            <button class="btn btn-primary w-100" onclick="searchJobs()">
+                            <button class="btn btn-primary w-100" onclick="buscarEmpleos()">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </div>
                     
                     <!-- Jobs List -->
-                    <div id="availableJobs">
-                        <!-- Jobs will be loaded dynamically -->
+                    <div class="row g-3" id="availableJobs">
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Desarrollador Frontend React</h6>
+                                        <p class="text-primary mb-1 small">Tigo El Salvador</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> San Salvador</span>
+                                            <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$1,800 - $2,500</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('Desarrollador Frontend React', 'Tigo El Salvador')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">UX Designer Senior</h6>
+                                        <p class="text-primary mb-1 small">Banco Agrícola</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> Santa Tecla</span>
+                                            <span><i class="fas fa-clock"></i> Presencial</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$1,500 - $2,200</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('UX Designer Senior', 'Banco Agrícola')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Backend Engineer Node.js</h6>
+                                        <p class="text-primary mb-1 small">Applaudo Studios</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> Remoto</span>
+                                            <span><i class="fas fa-clock"></i> Remoto</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$2,500 - $3,800</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('Backend Engineer Node.js', 'Applaudo Studios')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Product Manager</h6>
+                                        <p class="text-primary mb-1 small">Grupo Q</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> San Salvador</span>
+                                            <span><i class="fas fa-clock"></i> Híbrido</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$2,000 - $3,000</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('Product Manager', 'Grupo Q')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Data Analyst</h6>
+                                        <p class="text-primary mb-1 small">Banco Cuscatlán</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> San Salvador</span>
+                                            <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$1,600 - $2,400</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('Data Analyst', 'Banco Cuscatlán')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="job-card p-3 border rounded-3 bg-white">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">DevOps Engineer</h6>
+                                        <p class="text-primary mb-1 small">Millicom</p>
+                                        <div class="d-flex gap-3 small text-muted mb-2">
+                                            <span><i class="fas fa-map-marker-alt"></i> Remoto</span>
+                                            <span><i class="fas fa-clock"></i> Remoto</span>
+                                        </div>
+                                        <p class="fw-bold mb-0">$2,800 - $4,000</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="aplicarEmpleo('DevOps Engineer', 'Millicom')">
+                                        <i class="fas fa-paper-plane"></i> Postular
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Mi Perfil Page -->
+        <!-- ============================================ -->
+        <!-- MI PERFIL PAGE -->
+        <!-- ============================================ -->
         <div id="perfilPage" style="display: none;">
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card shadow-sm border-0 rounded-4 text-center">
                         <div class="card-body p-4">
-                            <img src="https://via.placeholder.com/120" class="rounded-circle mb-3" alt="Profile" width="120" height="120">
+                            <img src="../assets/images/ana_garcia.jpg" class="rounded-circle profile-avatar mb-3" alt="Profile" width="120" height="120">
                             <h4 class="fw-bold mb-1">Ana García López</h4>
                             <p class="text-muted">UX Designer Senior</p>
                             <p class="small text-muted">ana.garcia@email.com · +503 7000-0000</p>
                             <hr>
-                            <button class="btn btn-outline-primary w-100" onclick="editProfile()">
+                            <button class="btn btn-outline-primary w-100 mb-2" onclick="editarPerfil()">
                                 <i class="fas fa-edit me-1"></i> Editar perfil
                             </button>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#subirCVModal">
+                                <i class="fas fa-file-pdf me-1"></i> Mi CV
+                            </button>
+                        </div>
+                    </div>
+                    <!-- CV Card -->
+                    <div class="card shadow-sm border-0 rounded-4 mt-3">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <h6 class="fw-bold mb-0"><i class="fas fa-file-lines me-2 text-primary"></i> CV Actual</h6>
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-file-pdf text-danger" style="font-size: 3rem;"></i>
+                            </div>
+                            <p class="fw-bold mb-1">Mi_CV_Ana_Garcia.pdf</p>
+                            <p class="small text-muted mb-3">Actualizado: 15 de Marzo, 2026</p>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-download me-1"></i> Descargar
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#subirCVModal">
+                                    <i class="fas fa-upload me-1"></i> Cambiar CV
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -357,6 +554,8 @@
                                     <span class="badge bg-primary">UX Research</span>
                                     <span class="badge bg-primary">Prototyping</span>
                                     <span class="badge bg-primary">User Testing</span>
+                                    <span class="badge bg-primary">Wireframing</span>
+                                    <span class="badge bg-primary">Design System</span>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -366,16 +565,23 @@
                                     <small class="text-muted">2022 - Presente</small>
                                     <p class="text-muted small mt-1">Diseño de experiencia para app móvil y banca en línea.</p>
                                 </div>
-                                <div>
+                                <div class="mb-3">
                                     <p class="fw-bold mb-0">UX/UI Designer - Grupo Q</p>
                                     <small class="text-muted">2019 - 2022</small>
-                                    <p class="text-muted small mt-1">Rediseño de plataforma e-commerce.</p>
+                                    <p class="text-muted small mt-1">Rediseño de plataforma e-commerce, aumentando conversión en 30%.</p>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-0">Diseñadora UI Junior - Applaudo Studios</p>
+                                    <small class="text-muted">2017 - 2019</small>
+                                    <p class="text-muted small mt-1">Colaboración en diseño de interfaces para clientes internacionales.</p>
                                 </div>
                             </div>
                             <div>
                                 <h6 class="fw-bold">Educación</h6>
                                 <p class="mb-0">Licenciatura en Diseño Gráfico - Universidad de El Salvador</p>
                                 <small class="text-muted">2014 - 2019</small>
+                                <p class="mt-2 mb-0">Maestría en UX Design - Universidad Centroamericana</p>
+                                <small class="text-muted">2020 - 2022</small>
                             </div>
                         </div>
                     </div>
@@ -383,7 +589,9 @@
             </div>
         </div>
 
-        <!-- Configuración Page -->
+        <!-- ============================================ -->
+        <!-- CONFIGURACIÓN PAGE -->
+        <!-- ============================================ -->
         <div id="configuracionPage" style="display: none;">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-header bg-white border-0 pt-4 px-4">
@@ -424,10 +632,48 @@
                     <hr>
                     <div>
                         <h6 class="fw-bold text-danger">Zona de peligro</h6>
-                        <button class="btn btn-outline-danger" onclick="deleteAccount()">
+                        <button class="btn btn-outline-danger" onclick="eliminarCuenta()">
                             <i class="fas fa-trash-alt me-1"></i> Eliminar mi cuenta
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Subir CV -->
+    <div class="modal fade" id="subirCVModal" tabindex="-1" aria-labelledby="subirCVModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="subirCVModalLabel"><i class="fas fa-file-upload me-2 text-primary"></i> Subir mi CV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <div class="text-center mb-4">
+                        <div class="upload-area border-2 border-dashed rounded-3 p-5" style="border-color: #dee2e6; cursor: pointer;">
+                            <i class="fas fa-cloud-upload-alt text-primary mb-3" style="font-size: 2.5rem; display: block;"></i>
+                            <p class="fw-bold mb-1">Arrastra tu CV o haz clic aquí</p>
+                            <p class="text-muted small">Formatos soportados: PDF, DOC, DOCX (máx. 5MB)</p>
+                            <input type="file" id="cvFile" accept=".pdf,.doc,.docx" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Información del CV</label>
+                        <textarea class="form-control" placeholder="Descripción o notas sobre tu CV (opcional)" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="alert alert-info small" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Actualizar tu CV regularmente mejora tus posibilidades de ser contactado por las empresas.
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-upload me-1"></i> Subir CV
+                    </button>
                 </div>
             </div>
         </div>
@@ -444,129 +690,80 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Navigation handling
+        // ============================================
+        // VARIABLES GLOBALES
+        // ============================================
+        let postulaciones = [
+            { id: 1, puesto: "UX Designer Senior", empresa: "Banco Agrícola", ubicacion: "Santa Tecla", fecha: "15/03/2026", estado: "En revisión" },
+            { id: 2, puesto: "Frontend Developer", empresa: "Tigo El Salvador", ubicacion: "San Salvador", fecha: "10/03/2026", estado: "Entrevista" },
+            { id: 3, puesto: "Product Designer", empresa: "Applaudo Studios", ubicacion: "Remoto", fecha: "05/03/2026", estado: "No seleccionado" },
+            { id: 4, puesto: "Backend Engineer", empresa: "Grupo Q", ubicacion: "San Salvador", fecha: "01/03/2026", estado: "Archivado" },
+            { id: 5, puesto: "Data Analyst", empresa: "Banco Cuscatlán", ubicacion: "San Salvador", fecha: "25/02/2026", estado: "Contratado" }
+        ];
+
+        // ============================================
+        // NAVEGACIÓN
+        // ============================================
         function showPage(pageId) {
-            // Hide all pages
             document.getElementById('dashboardPage').style.display = 'none';
             document.getElementById('misPostulacionesPage').style.display = 'none';
             document.getElementById('empleosPage').style.display = 'none';
             document.getElementById('perfilPage').style.display = 'none';
             document.getElementById('configuracionPage').style.display = 'none';
-            
-            // Show selected page
             document.getElementById(pageId).style.display = 'block';
             
-            // Update active nav link
             document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-page') === pageId.replace('Page', '').toLowerCase()) {
                     link.classList.add('active');
                 }
             });
-            
-            // Load jobs if exploring jobs page
-            if (pageId === 'empleosPage') {
-                loadAvailableJobs();
-            }
         }
-        
-        // Load available jobs
-        function loadAvailableJobs() {
-            const jobs = [
-                { title: "Frontend Developer", company: "Tigo El Salvador", location: "San Salvador", salary: "$1,800-$2,500", type: "Tiempo completo", category: "Tecnología" },
-                { title: "UX Designer Senior", company: "Banco Agrícola", location: "Santa Tecla", salary: "$1,500-$2,200", type: "Presencial", category: "Diseño" },
-                { title: "Backend Engineer", company: "Applaudo Studios", location: "Remoto", salary: "$2,500-$3,800", type: "Remoto", category: "Tecnología" },
-                { title: "Product Manager", company: "Grupo Q", location: "San Salvador", salary: "$2,000-$3,000", type: "Híbrido", category: "Marketing" },
-                { title: "Data Analyst", company: "Banco Cuscatlán", location: "San Salvador", salary: "$1,600-$2,400", type: "Tiempo completo", category: "Finanzas" },
-                { title: "DevOps Engineer", company: "Millicom", location: "Remoto", salary: "$2,800-$4,000", type: "Remoto", category: "Tecnología" }
-            ];
+
+        // ============================================
+        // FUNCIONES DE EMPLEOS
+        // ============================================
+        function aplicarEmpleo(puesto, empresa) {
+            showNotification(`¡Te has postulado a ${puesto} en ${empresa}!`, 'success');
             
-            let html = '<div class="row g-3">';
-            jobs.forEach(job => {
-                html += `
-                    <div class="col-md-6">
-                        <div class="job-card p-3 border rounded-3">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <div>
-                                    <h6 class="fw-bold mb-1">${job.title}</h6>
-                                    <p class="text-primary mb-1 small">${job.company}</p>
-                                    <div class="d-flex gap-3 small text-muted mb-2">
-                                        <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
-                                        <span><i class="fas fa-clock"></i> ${job.type}</span>
-                                    </div>
-                                    <p class="fw-bold mb-0">${job.salary}</p>
-                                </div>
-                                <button class="btn btn-primary btn-sm" onclick="applyToJob('${job.title}', '${job.company}')">
-                                    <i class="fas fa-paper-plane"></i> Postular
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-            html += '</div>';
-            document.getElementById('availableJobs').innerHTML = html;
-        }
-        
-        // Load recommended jobs
-        function loadRecommendedJobs() {
-            const jobs = [
-                { title: "Frontend Developer", company: "Tigo El Salvador", location: "San Salvador", salary: "$1,800-$2,500" },
-                { title: "UX Designer Senior", company: "Banco Agrícola", location: "Santa Tecla", salary: "$1,500-$2,200" },
-                { title: "Product Designer", company: "Applaudo Studios", location: "Remoto", salary: "$2,000-$3,000" }
-            ];
+            // Agregar a postulaciones recientes
+            const nuevaPostulacion = {
+                id: postulaciones.length + 1,
+                puesto: puesto,
+                empresa: empresa,
+                ubicacion: "Por definir",
+                fecha: new Date().toLocaleDateString(),
+                estado: "Pendiente"
+            };
+            postulaciones.unshift(nuevaPostulacion);
             
-            let html = '';
-            jobs.forEach(job => {
-                html += `
-                    <div class="col-md-4">
-                        <div class="job-card p-3 border rounded-3">
-                            <h6 class="fw-bold mb-1">${job.title}</h6>
-                            <p class="text-primary mb-1 small">${job.company}</p>
-                            <div class="d-flex gap-3 small text-muted mb-2">
-                                <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
-                            </div>
-                            <p class="fw-bold mb-2">${job.salary}</p>
-                            <button class="btn btn-outline-primary btn-sm w-100" onclick="applyToJob('${job.title}', '${job.company}')">
-                                Postular ahora
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-            document.getElementById('recommendedJobs').innerHTML = html;
-        }
-        
-        // Apply to job function
-        function applyToJob(title, company) {
-            showNotification(`Te has postulado a ${title} en ${company}`, 'success');
             setTimeout(() => {
                 showPage('misPostulacionesPage');
+                cargarPostulaciones();
             }, 1500);
         }
-        
-        // Search jobs
-        function searchJobs() {
-            const searchTerm = document.getElementById('jobSearch').value.toLowerCase();
+
+        function buscarEmpleos() {
+            const searchTerm = document.getElementById('jobSearch').value;
             const location = document.getElementById('jobLocation').value;
-            const category = document.getElementById('jobCategory').value;
-            
             showNotification(`Buscando: ${searchTerm || 'todos'} en ${location || 'todas partes'}`, 'info');
-            // Here you would filter jobs based on criteria
         }
-        
-        // View job details
-        function viewJobDetails(jobId) {
-            showNotification('Cargando detalles del empleo...', 'info');
+
+        function verDetalleEmpleo(id) {
+            const postulacion = postulaciones.find(p => p.id === id);
+            if (postulacion) {
+                showNotification(`Detalles de: ${postulacion.puesto} en ${postulacion.empresa}`, 'info');
+            }
         }
-        
-        // Edit profile
-        function editProfile() {
+
+        // ============================================
+        // FUNCIONES DE PERFIL
+        // ============================================
+        function editarPerfil() {
             showNotification('Funcionalidad de edición de perfil próximamente', 'info');
         }
-        
-        // Delete account
-        function deleteAccount() {
+
+        function eliminarCuenta() {
             if (confirm('¿Estás segura de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.')) {
                 showNotification('Cuenta eliminada. Redirigiendo...', 'warning');
                 setTimeout(() => {
@@ -574,79 +771,120 @@
                 }, 2000);
             }
         }
-        
-        // Notification system
+
+        // ============================================
+        // ACTUALIZAR TABLAS
+        // ============================================
+        function cargarPostulaciones() {
+            const tbody = document.getElementById('allApplications');
+            if (!tbody) return;
+            
+            tbody.innerHTML = postulaciones.map(p => {
+                let estadoClass = '';
+                switch(p.estado) {
+                    case 'En revisión': estadoClass = 'bg-warning'; break;
+                    case 'Entrevista': estadoClass = 'bg-info'; break;
+                    case 'No seleccionado': estadoClass = 'bg-danger'; break;
+                    case 'Archivado': estadoClass = 'bg-secondary'; break;
+                    case 'Contratado': estadoClass = 'bg-success'; break;
+                    default: estadoClass = 'bg-secondary';
+                }
+                return `
+                    <tr>
+                        <td><strong>${p.puesto}</strong></td>
+                        <td>${p.empresa}</td>
+                        <td>${p.ubicacion}</td>
+                        <td>${p.fecha}</td>
+                        <td><span class="badge ${estadoClass}">${p.estado}</span></td>
+                        <td><button class="btn btn-sm btn-outline-primary" onclick="verDetalleEmpleo(${p.id})"><i class="fas fa-eye"></i> Ver</button></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // ============================================
+        // GRÁFICO
+        // ============================================
+        function initChart() {
+            const ctx = document.getElementById('applicationsChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['En revisión', 'Entrevista', 'No seleccionado', 'Archivado', 'Contratado'],
+                        datasets: [{
+                            data: [1, 1, 1, 1, 1],
+                            backgroundColor: ['#ffc107', '#0dcaf0', '#dc3545', '#6c757d', '#198754'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { font: { size: 11 } }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // ============================================
+        // NOTIFICACIONES
+        // ============================================
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
-            const bgColor = type === 'warning' ? 'warning' : type === 'success' ? 'success' : 'info';
-            const icon = type === 'warning' ? 'exclamation-triangle' : type === 'success' ? 'check-circle' : 'info-circle';
-            
+            let bgColor, icon;
+            switch(type) {
+                case 'warning': bgColor = 'warning'; icon = 'exclamation-triangle'; break;
+                case 'success': bgColor = 'success'; icon = 'check-circle'; break;
+                default: bgColor = 'info'; icon = 'info-circle';
+            }
             notification.className = `alert alert-${bgColor} position-fixed top-0 end-0 m-3 shadow`;
             notification.style.zIndex = '9999';
             notification.style.minWidth = '300px';
             notification.style.animation = 'slideInRight 0.3s ease-out';
             notification.innerHTML = `<i class="fas fa-${icon} me-2"></i>${message}`;
             document.body.appendChild(notification);
-            
             setTimeout(() => {
                 notification.style.opacity = '0';
                 notification.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => notification.remove(), 300);
             }, 3000);
         }
-        
-        // Chart initialization
-        function initChart() {
-            const ctx = document.getElementById('applicationsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['En revisión', 'Entrevista', 'No seleccionado', 'Archivado'],
-                    datasets: [{
-                        data: [5, 3, 3, 1],
-                        backgroundColor: ['#ffc107', '#198754', '#dc3545', '#6c757d'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: { font: { size: 11 } }
-                        }
-                    }
-                }
-            });
-        }
-        
-        // Setup navigation event listeners
-        document.querySelectorAll('[data-page]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.getAttribute('data-page');
-                if (page === 'dashboard') showPage('dashboardPage');
-                else if (page === 'mis-postulaciones') showPage('misPostulacionesPage');
-                else if (page === 'empleos') showPage('empleosPage');
-                else if (page === 'perfil') showPage('perfilPage');
-                else if (page === 'configuracion') showPage('configuracionPage');
-            });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
+
+        // ============================================
+        // INICIALIZACIÓN
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
             showPage('dashboardPage');
             initChart();
-            loadRecommendedJobs();
+            cargarPostulaciones();
+            
+            // Event listeners para navegación
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = link.getAttribute('data-page');
+                    if (page === 'dashboard') showPage('dashboardPage');
+                    else if (page === 'mis-postulaciones') showPage('misPostulacionesPage');
+                    else if (page === 'empleos') showPage('empleosPage');
+                    else if (page === 'perfil') showPage('perfilPage');
+                    else if (page === 'configuracion') showPage('configuracionPage');
+                });
+            });
         });
-        
-        // Make functions global
-        window.applyToJob = applyToJob;
-        window.viewJobDetails = viewJobDetails;
-        window.editProfile = editProfile;
-        window.deleteAccount = deleteAccount;
-        window.searchJobs = searchJobs;
+
+        // Funciones globales
+        window.aplicarEmpleo = aplicarEmpleo;
+        window.buscarEmpleos = buscarEmpleos;
+        window.verDetalleEmpleo = verDetalleEmpleo;
+        window.editarPerfil = editarPerfil;
+        window.eliminarCuenta = eliminarCuenta;
+        window.showPage = showPage;
     </script>
 </body>
 </html>

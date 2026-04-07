@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Empresa - IntegraJobs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="empresa-body">
+
+    <!-- Navbar de la empresa -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">IntegraJobs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#empresaNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="empresaNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-page="dashboard"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="mis-vacantes"><i class="fas fa-briefcase me-1"></i> Mis Vacantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="candidatos"><i class="fas fa-users me-1"></i> Candidatos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-page="mi-empresa"><i class="fas fa-building me-1"></i> Mi Empresa</a></li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-building me-1"></i>
+                        TechSolutions SV
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#" data-page="mi-empresa"><i class="fas fa-building me-2"></i> Mi Empresa</a></li>
+                        <li><a class="dropdown-item" href="#" data-page="configuracion"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="index.html"><i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container py-4" id="mainContent">
+        
+        <!-- ============================================ -->
+        <!-- DASHBOARD PAGE -->
+        <!-- ============================================ -->
+        <div id="dashboardPage">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner bg-gradient-primary rounded-4 p-4 mb-4 text-white">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="fw-bold mb-2">Panel de Empresa</h2>
+                        <p class="mb-0 opacity-90">Gestione tus vacantes y candidatos desde aquí.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#nuevaVacanteModal">
+                            <i class="fas fa-plus me-1"></i> Crear nueva vacante
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-4 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Vacantes Activas</p>
+                                <h3 class="fw-bold mb-0">3</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +1 esta semana</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Postulantes Nuevos</p>
+                                <h3 class="fw-bold mb-0">12</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +5 esta semana</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="stat-card-dashboard">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="text-muted mb-1 small">Vistas al Perfil</p>
+                                <h3 class="fw-bold mb-0">45</h3>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +8 esta semana</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Últimas vacantes publicadas -->
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold mb-0"><i class="fas fa-clock me-2 text-primary"></i> Últimas vacantes publicadas</h5>
+                        <a href="#" class="text-primary text-decoration-none small" data-page="mis-vacantes">Ver todas</a>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>PUESTO</th>
+                                    <th>UBICACIÓN</th>
+                                    <th>POSTULANTES</th>
+                                    <th>FECHA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentVacancies">
+                                <!-- Vacantes estáticas de ejemplo -->
+                                <tr>
+                                    <td>
+                                        <strong>Desarrollador Frontend React</strong><br>
+                                        <small class="text-muted">$1,800 - $2,500</small>
+                                    </td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> San Salvador</td>
+                                    <td><span class="badge bg-primary rounded-pill">8</span></td>
+                                    <td>15/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(1)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(1)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>UX Designer Senior</strong><br>
+                                        <small class="text-muted">$1,500 - $2,200</small>
+                                    </td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Santa Tecla</td>
+                                    <td><span class="badge bg-primary rounded-pill">5</span></td>
+                                    <td>10/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(2)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(2)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Backend Engineer Node.js</strong><br>
+                                        <small class="text-muted">$2,500 - $3,800</small>
+                                    </td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Remoto</td>
+                                    <td><span class="badge bg-primary rounded-pill">12</span></td>
+                                    <td>05/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(3)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(3)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Product Manager</strong><br>
+                                        <small class="text-muted">$2,000 - $3,000</small>
+                                    </td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Híbrido</td>
+                                    <td><span class="badge bg-primary rounded-pill">4</span></td>
+                                    <td>01/03/2026</td>
+                                    <td><span class="badge bg-secondary">Cerrada</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(4)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(4)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- MIS VACANTES PAGE -->
+        <!-- ============================================ -->
+        <div id="misVacantesPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div>
+                            <h4 class="fw-bold mb-0"><i class="fas fa-briefcase me-2 text-primary"></i> Mis Vacantes</h4>
+                            <p class="text-muted mt-2">Gestiona todas tus ofertas de empleo publicadas</p>
+                        </div>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevaVacanteModal">
+                            <i class="fas fa-plus me-1"></i> Nueva Vacante
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="vacantesTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>PUESTO</th>
+                                    <th>UBICACIÓN</th>
+                                    <th>POSTULANTES</th>
+                                    <th>FECHA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vacantesList">
+                                <!-- Vacantes estáticas de ejemplo -->
+                                <tr>
+                                    <td><strong>Desarrollador Frontend React</strong><br><small class="text-muted">$1,800 - $2,500</small></td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> San Salvador</td>
+                                    <td><span class="badge bg-primary rounded-pill">8</span></td>
+                                    <td>15/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(1)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary me-1" onclick="editarVacante(1)"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(1)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>UX Designer Senior</strong><br><small class="text-muted">$1,500 - $2,200</small></td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Santa Tecla</td>
+                                    <td><span class="badge bg-primary rounded-pill">5</span></td>
+                                    <td>10/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(2)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary me-1" onclick="editarVacante(2)"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(2)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backend Engineer Node.js</strong><br><small class="text-muted">$2,500 - $3,800</small></td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Remoto</td>
+                                    <td><span class="badge bg-primary rounded-pill">12</span></td>
+                                    <td>05/03/2026</td>
+                                    <td><span class="badge bg-success">Activa</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(3)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary me-1" onclick="editarVacante(3)"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(3)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Product Manager</strong><br><small class="text-muted">$2,000 - $3,000</small></td>
+                                    <td><i class="fas fa-map-marker-alt me-1 text-muted"></i> Híbrido</td>
+                                    <td><span class="badge bg-primary rounded-pill">4</span></td>
+                                    <td>01/03/2026</td>
+                                    <td><span class="badge bg-secondary">Cerrada</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="verVacante(4)"><i class="fas fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary me-1" onclick="editarVacante(4)"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarVacante(4)"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CANDIDATOS PAGE -->
+        <!-- ============================================ -->
+        <div id="candidatosPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h4 class="fw-bold mb-0"><i class="fas fa-users me-2 text-primary"></i> Candidatos</h4>
+                    <p class="text-muted mt-2">Revisa los profesionales que han postulado a tus vacantes</p>
+                </div>
+                <div class="card-body p-4">
+                    <!-- Filtros -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <select class="form-select" id="filtroVacante">
+                                <option value="">Todas las vacantes</option>
+                                <option>Desarrollador Frontend</option>
+                                <option>UX Designer Senior</option>
+                                <option>Backend Engineer</option>
+                                <option>Product Manager</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="filtroEstado">
+                                <option value="">Todos los estados</option>
+                                <option>Pendiente</option>
+                                <option>En revisión</option>
+                                <option>Entrevista</option>
+                                <option>Contratado</option>
+                                <option>Rechazado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Buscar candidato..." id="searchCandidato">
+                        </div>
+                    </div>
+                    
+                    <!-- Lista de candidatos -->
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>NOMBRE</th>
+                                    <th>VACANTE</th>
+                                    <th>FECHA</th>
+                                    <th>ESTADO</th>
+                                    <th>CV</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody id="candidatosList">
+                                <tr>
+                                    <td><img src="../assets/images/ana_garcia.jpg" class="rounded-circle candidate-avatar me-2" alt="Ana García" width="30" height="30"> <strong>Ana García</strong><br><small class="text-muted">ana.garcia@email.com</small></td>
+                                    <td>Desarrollador Frontend</td>
+                                    <td>15/03/2026</td>
+                                    <td><span class="badge bg-warning">En revisión</span></td>
+                                    <td><button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#verCVModal" onclick="cargarCV('Ana García', 'Mi_CV_Ana_Garcia.pdf')"><i class="fas fa-file-pdf me-1"></i> Ver</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verCandidato(1)"><i class="fas fa-eye"></i> Ver perfil</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../assets/images/carlos_martinez.jpg" class="rounded-circle candidate-avatar me-2" alt="Carlos Martínez" width="30" height="30"> <strong>Carlos Martínez</strong><br><small class="text-muted">carlos.m@email.com</small></td>
+                                    <td>UX Designer Senior</td>
+                                    <td>14/03/2026</td>
+                                    <td><span class="badge bg-info">Entrevista</span></td>
+                                    <td><button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#verCVModal" onclick="cargarCV('Carlos Martínez', 'CV_Carlos_Martinez.pdf')"><i class="fas fa-file-pdf me-1"></i> Ver</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verCandidato(2)"><i class="fas fa-eye"></i> Ver perfil</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../assets/images/laura_perez.jpg" class="rounded-circle candidate-avatar me-2" alt="Laura Pérez" width="30" height="30"> <strong>Laura Pérez</strong><br><small class="text-muted">laura.perez@email.com</small></td>
+                                    <td>Backend Engineer</td>
+                                    <td>12/03/2026</td>
+                                    <td><span class="badge bg-secondary">Pendiente</span></td>
+                                    <td><button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#verCVModal" onclick="cargarCV('Laura Pérez', 'CV_Laura_Perez.pdf')"><i class="fas fa-file-pdf me-1"></i> Ver</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verCandidato(3)"><i class="fas fa-eye"></i> Ver perfil</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../assets/images/miguel_rodriguez.jpg" class="rounded-circle candidate-avatar me-2" alt="Miguel Rodríguez" width="30" height="30"> <strong>Miguel Rodríguez</strong><br><small class="text-muted">miguel.r@email.com</small></td>
+                                    <td>Desarrollador Frontend</td>
+                                    <td>10/03/2026</td>
+                                    <td><span class="badge bg-success">Contratado</span></td>
+                                    <td><button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#verCVModal" onclick="cargarCV('Miguel Rodríguez', 'CV_Miguel_Rodriguez.pdf')"><i class="fas fa-file-pdf me-1"></i> Ver</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verCandidato(4)"><i class="fas fa-eye"></i> Ver perfil</button></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../assets/images/daniela_flores.jpg" class="rounded-circle candidate-avatar me-2" alt="Daniela Flores" width="30" height="30"> <strong>Daniela Flores</strong><br><small class="text-muted">daniela.f@email.com</small></td>
+                                    <td>Product Manager</td>
+                                    <td>08/03/2026</td>
+                                    <td><span class="badge bg-danger">Rechazado</span></td>
+                                    <td><button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#verCVModal" onclick="cargarCV('Daniela Flores', 'CV_Daniela_Flores.pdf')"><i class="fas fa-file-pdf me-1"></i> Ver</button></td>
+                                    <td><button class="btn btn-sm btn-outline-primary" onclick="verCandidato(5)"><i class="fas fa-eye"></i> Ver perfil</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- MI EMPRESA PAGE -->
+        <!-- ============================================ -->
+        <div id="miEmpresaPage" style="display: none;">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 rounded-4 text-center">
+                        <div class="card-body p-4">
+                            <div class="company-logo mb-3">
+                                <img src="../assets/images/tech_company.jpg" class="rounded-circle company-avatar" alt="TechSolutions SV">
+                            </div>
+                            <h4 class="fw-bold mb-1">TechSolutions SV</h4>
+                            <p class="text-muted">Tecnología · 10-50 empleados</p>
+                            <p class="small text-muted">empresa@techsolutions.com · (503) 7000-0000</p>
+                            <hr>
+                            <button class="btn btn-outline-primary w-100" onclick="editarEmpresa()">
+                                <i class="fas fa-edit me-1"></i> Editar perfil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <h5 class="fw-bold mb-0"><i class="fas fa-info-circle me-2 text-primary"></i> Información de la empresa</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Descripción</h6>
+                                <p class="text-muted">Empresa líder en desarrollo de software y soluciones tecnológicas en El Salvador. Buscamos talento innovador para crecer juntos.</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Sitio web</h6>
+                                <p><a href="#" class="text-primary">www.techsolutions.com.sv</a></p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold">Ubicación</h6>
+                                <p class="text-muted">San Salvador, El Salvador</p>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold">Redes sociales</h6>
+                                <div class="d-flex gap-3 mt-2">
+                                    <a href="#" class="text-primary"><i class="fab fa-linkedin fa-2x"></i></a>
+                                    <a href="#" class="text-primary"><i class="fab fa-facebook fa-2x"></i></a>
+                                    <a href="#" class="text-primary"><i class="fab fa-instagram fa-2x"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CONFIGURACIÓN PAGE -->
+        <!-- ============================================ -->
+        <div id="configuracionPage" style="display: none;">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h4 class="fw-bold mb-0"><i class="fas fa-cog me-2 text-primary"></i> Configuración de cuenta</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Información de contacto</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small">Correo electrónico</label>
+                                <input type="email" class="form-control" value="empresa@techsolutions.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small">Teléfono</label>
+                                <input type="text" class="form-control" value="(503) 7000-0000">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Preferencias de notificaciones</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                            <label class="form-check-label" for="emailNotif">Notificaciones por correo electrónico</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="newApplicants" checked>
+                            <label class="form-check-label" for="newApplicants">Alertas de nuevos postulantes</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h6 class="fw-bold text-danger">Zona de peligro</h6>
+                        <button class="btn btn-outline-danger" onclick="eliminarCuenta()">
+                            <i class="fas fa-trash-alt me-1"></i> Eliminar cuenta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para nueva vacante -->
+    <div class="modal fade" id="nuevaVacanteModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-4">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-plus-circle text-primary me-2"></i> Crear nueva vacante</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="nuevaVacanteForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Título del puesto</label>
+                            <input type="text" class="form-control" id="puestoTitulo" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Ubicación</label>
+                                <input type="text" class="form-control" id="ubicacion" placeholder="San Salvador / Remoto">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Tipo de contrato</label>
+                                <select class="form-select" id="tipoContrato">
+                                    <option>Tiempo completo</option>
+                                    <option>Medio tiempo</option>
+                                    <option>Freelance</option>
+                                    <option>Pasantía</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Rango salarial</label>
+                            <input type="text" class="form-control" id="salario" placeholder="$1,500 - $2,500">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Descripción del puesto</label>
+                            <textarea class="form-control" rows="4" id="descripcion"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Requisitos</label>
+                            <textarea class="form-control" rows="3" id="requisitos"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary rounded-pill" onclick="crearVacante()">
+                        <i class="fas fa-save me-1"></i> Publicar vacante
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Ver CV -->
+    <div class="modal fade" id="verCVModal" tabindex="-1" aria-labelledby="verCVModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <h5 class="modal-title fw-bold" id="verCVModalLabel"><i class="fas fa-file-pdf me-2 text-danger"></i> CV del Candidato</h5>
+                        <small class="text-muted" id="cvCandidateName"></small>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <div class="text-center mb-4">
+                        <div class="p-5 bg-light rounded-3">
+                            <i class="fas fa-file-pdf" style="font-size: 4rem; color: #dc3545;"></i>
+                            <p class="fw-bold mt-3 mb-1" id="cvFileName"></p>
+                            <p class="text-muted small">Archivo PDF - Haz clic en descargar para obtener el documento completo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Tu email" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                <input type="tel" class="form-control" placeholder="Tu teléfono" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <label class="form-label fw-bold">Notas sobre el candidato</label>
+                        <textarea class="form-control" placeholder="Añade tus observaciones sobre este candidato..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="alert alert-info small mt-3" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Recuerda guardar tus notas antes de cerrar esta ventana.
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-outline-danger">
+                        <i class="fas fa-download me-1"></i> Descargar CV
+                    </a>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-save me-1"></i> Guardar notas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted small mb-0">© 2026 IntegraJobs. Todos los derechos reservados. Hecho con ❤️ en El Salvador</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Variables para almacenar vacantes
+        let vacantes = [
+            { id: 1, titulo: "Desarrollador Frontend React", ubicacion: "San Salvador", postulantes: 8, fecha: "15/03/2026", estado: "Activa", salario: "$1,800 - $2,500" },
+            { id: 2, titulo: "UX Designer Senior", ubicacion: "Santa Tecla", postulantes: 5, fecha: "10/03/2026", estado: "Activa", salario: "$1,500 - $2,200" },
+            { id: 3, titulo: "Backend Engineer Node.js", ubicacion: "Remoto", postulantes: 12, fecha: "05/03/2026", estado: "Activa", salario: "$2,500 - $3,800" },
+            { id: 4, titulo: "Product Manager", ubicacion: "Híbrido", postulantes: 4, fecha: "01/03/2026", estado: "Cerrada", salario: "$2,000 - $3,000" }
+        ];
+
+        // Navegación
+        function showPage(pageId) {
+            document.getElementById('dashboardPage').style.display = 'none';
+            document.getElementById('misVacantesPage').style.display = 'none';
+            document.getElementById('candidatosPage').style.display = 'none';
+            document.getElementById('miEmpresaPage').style.display = 'none';
+            document.getElementById('configuracionPage').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+            
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+
+        // Funciones de vacantes
+        function verVacante(id) {
+            const vacante = vacantes.find(v => v.id === id);
+            showNotification(`Vacante: ${vacante.titulo}`, 'info');
+        }
+
+        function editarVacante(id) {
+            showNotification('Funcionalidad de edición próximamente', 'info');
+        }
+
+        function eliminarVacante(id) {
+            if (confirm('¿Eliminar esta vacante?')) {
+                vacantes = vacantes.filter(v => v.id !== id);
+                location.reload();
+                showNotification('Vacante eliminada', 'success');
+            }
+        }
+
+        function verCandidato(id) {
+            showNotification('Viendo perfil del candidato', 'info');
+        }
+
+        function editarEmpresa() {
+            showNotification('Funcionalidad de edición próximamente', 'info');
+        }
+
+        function eliminarCuenta() {
+            if (confirm('¿Eliminar cuenta?')) {
+                showNotification('Cuenta eliminada', 'warning');
+                setTimeout(() => window.location.href = 'index.html', 1500);
+            }
+        }
+
+        function crearVacante() {
+            const titulo = document.getElementById('puestoTitulo').value;
+            if (!titulo) {
+                showNotification('Completa el título', 'warning');
+                return;
+            }
+            showNotification('Vacante creada', 'success');
+            bootstrap.Modal.getInstance(document.getElementById('nuevaVacanteModal')).hide();
+            document.getElementById('nuevaVacanteForm').reset();
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} position-fixed top-0 end-0 m-3 shadow`;
+            notification.style.zIndex = '9999';
+            notification.style.minWidth = '300px';
+            notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'} me-2"></i>${message}`;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        function cargarCV(nombreCandidato, nombreArchivo) {
+            document.getElementById('cvCandidateName').textContent = nombreCandidato;
+            document.getElementById('cvFileName').textContent = nombreArchivo;
+        }
+
+        // Event listeners
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                if (page === 'dashboard') showPage('dashboardPage');
+                else if (page === 'mis-vacantes') showPage('misVacantesPage');
+                else if (page === 'candidatos') showPage('candidatosPage');
+                else if (page === 'mi-empresa') showPage('miEmpresaPage');
+                else if (page === 'configuracion') showPage('configuracionPage');
+            });
+        });
+
+        // Funciones globales
+        window.verVacante = verVacante;
+        window.editarVacante = editarVacante;
+        window.eliminarVacante = eliminarVacante;
+        window.verCandidato = verCandidato;
+        window.editarEmpresa = editarEmpresa;
+        window.eliminarCuenta = eliminarCuenta;
+        window.crearVacante = crearVacante;
+        window.cargarCV = cargarCV;
+        window.showPage = showPage;
+    </script>
+</body>
+</html>
